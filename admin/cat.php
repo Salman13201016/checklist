@@ -212,7 +212,7 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <div class="row">
+                    <div class="row abc">
                         <div class="col-md-6 mx-auto grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
