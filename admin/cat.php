@@ -217,13 +217,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Main Category form</h4>
+                                    <span id="cat_notification"></span>
                                     <form class="forms-sample">
                                         <div class="form-group">
                                             <label for="exampleInputUsername1">Category Name</label>
-                                            <input type="text" class="form-control" id="exampleInputUsername1"
+                                            <input type="text" class="form-control" id="cat_name"
                                                 placeholder="Enter Product Category Name" />
                                         </div>
-                                        <button type="submit" class="btn btn-primary me-2">
+                                        <button type="button" class="btn btn-primary me-2" id="sub_cat">
                                             Submit
                                         </button>
                                     </form>
@@ -295,6 +296,7 @@
         <!-- endinject -->
         <!-- Custom js for this page-->
         <script src="../assets/js/file-upload.js"></script>
+        <script src="../assets/js/cat.js"></script>
         <!-- End custom js for this page-->
 </body>
 
