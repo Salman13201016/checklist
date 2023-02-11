@@ -246,13 +246,28 @@
                                                     <th>Action </th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="cat_tbody">
+                                                <?php
+                                                    include '../db/db_config.php';
+                                                    $sql = "SELECT * FROM categories";
+                                                    $query = mysqli_query($con,$sql);
+                                                    $count = 1;
+                                                    while($result = mysqli_fetch_assoc($query)){
+                                                        
+                                                    
+                                                ?>
+
                                                 <tr>
-                                                    <td>Jacob</td>
-                                                    <td>53275531</td>
+                                                    <td><?=$count;?></td>
+                                                    <td><?=$result['cat_name'];?></td>
                                                     <td>Edit Delete</td>
 
                                                 </tr>
+                                                <?php
+                                                    $count++;
+                                                    }
+                                                ?>
+
                                             </tbody>
                                         </table>
                                     </div>
