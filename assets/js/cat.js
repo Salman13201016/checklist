@@ -32,9 +32,12 @@ $(document).ready(function(){
                     else{
                         value = "The category has been inserted successfully"
                         response_data = $.parseJSON(response)
-                        console.log(response_data[response_data.length-1])
-                        $row = "<tr><td>"+response_data.length+"</td><td>"+response_data[response_data.length-1]+"</td><td>Edit Delete</td></tr>"
-                        $("#cat_tbody").append($row)
+                        // response_data1 = $.parseJSON(response1)
+                        console.log(response_data);
+                        console.log(response_data[1][response_data[1].length-1])
+                        row = "<tr><td>"+response_data[0].length+"</td><td style='display:none;'>"+response_data[1][response_data[1].length-1]+"</td><td>"+response_data[0][response_data[0].length-1]+"</td><td><a href='#' id='edit_btn' class='btn btn-primary action'><i class='far fa-edit'></i></a> <a href='#' class='btn btn-primary action'><i class='fa fa-trash'></i></a></td></tr>"
+                        console.log(row)
+                        $("#cat_tbody").append(row)
                         $("#cat_notification").html(value) 
                         $("#cat_notification").show();
                         $("#cat_notification").css('color','green');
@@ -52,8 +55,10 @@ $(document).ready(function(){
         console.log("edit");
         $("#edit_card").show();
         $("#add_card").hide();
-        cat_name = $(this).closest("tr").find("td:eq(1)").text();
+        cat_name = $(this).closest("tr").find("td:eq(2)").text();
+        cat_id = $(this).closest("tr").find("td:eq(1)").text();
         $("#edit_cat_name").val(cat_name)
+        $("#edit_cat_id").val(cat_id)
         console.log(cat_name);
     });
 

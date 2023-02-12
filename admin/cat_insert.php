@@ -19,10 +19,13 @@
             $query = mysqli_query($con,$sql);
             $count = 1;
             $res = [];
+            $res_id = [];
             while($result = mysqli_fetch_assoc($query)){
                 array_push($res,$result['cat_name']);
+                array_push($res_id,$result['id']);
             }
-            echo json_encode($res);
+            echo json_encode(array($res,$res_id));
+            // echo json_encode($res);
             // echo "Your Data Has Been Inserted Successfully";
         }
     }

@@ -245,6 +245,7 @@
                                             <label for="exampleInputUsername1">Category Name</label>
                                             <input type="text" class="form-control" id="edit_cat_name"
                                                 placeholder="Enter Product Category Name" />
+                                            <input type="hidden" class="form-control" id="edit_cat_id" />
                                         </div>
                                         <button type="button" class="btn btn-primary me-2" id="edit_cat">
                                             Edit
@@ -267,6 +268,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>SL</th>
+                                                    <th style="display:none;">ID</th>
                                                     <th>Category Name</th>
                                                     <th>Action </th>
                                                 </tr>
@@ -284,6 +286,7 @@
 
                                                 <tr>
                                                     <td><?=$count;?></td>
+                                                    <td style="display:none;"><?=$result['id'];?></td>
                                                     <td><?=$result['cat_name'];?></td>
                                                     <td><a href="#" id="edit_btn" class="btn btn-primary action"><i
                                                                 class="far fa-edit"></i></a> <a href="#"
