@@ -1,0 +1,14 @@
+.action{
+    
+background: white;
+border: none;
+padding: 1px;
+    
+}
+.action:hover{
+    
+    background:transparent;
+    /* border: none;
+    padding: 1px; */
+        
+}

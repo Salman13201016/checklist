@@ -14,8 +14,12 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
     <!-- endinject -->
     <link rel="shortcut icon" href="../assets/images/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -213,10 +217,10 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row abc">
-                        <div class="col-md-6 mx-auto grid-margin stretch-card">
+                        <div id="add_card" class=" col-md-6 mx-auto grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Main Category form</h4>
+                                    <h4 class="card-title">Add Category form</h4>
                                     <span id="cat_notification"></span>
                                     <form class="forms-sample">
                                         <div class="form-group">
@@ -226,6 +230,27 @@
                                         </div>
                                         <button type="button" class="btn btn-primary me-2" id="sub_cat">
                                             Submit
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edit_card" class="col-md-6 mx-auto grid-margin stretch-card" style="display:none;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Edit Category form</h4>
+                                    <span id="cat_notification"></span>
+                                    <form class="forms-sample">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">Category Name</label>
+                                            <input type="text" class="form-control" id="edit_cat_name"
+                                                placeholder="Enter Product Category Name" />
+                                        </div>
+                                        <button type="button" class="btn btn-primary me-2" id="edit_cat">
+                                            Edit
+                                        </button>
+                                        <button type="button" class="btn btn-primary me-2" id="back_cat">
+                                            Back
                                         </button>
                                     </form>
                                 </div>
@@ -260,7 +285,10 @@
                                                 <tr>
                                                     <td><?=$count;?></td>
                                                     <td><?=$result['cat_name'];?></td>
-                                                    <td>Edit Delete</td>
+                                                    <td><a href="#" id="edit_btn" class="btn btn-primary action"><i
+                                                                class="far fa-edit"></i></a> <a href="#"
+                                                            class="btn btn-primary action"><i
+                                                                class="fa fa-trash"></i></a></td>
 
                                                 </tr>
                                                 <?php

@@ -47,4 +47,19 @@ $(document).ready(function(){
         
 
     });
+
+    $(document).on('click','#edit_btn',function(){
+        console.log("edit");
+        $("#edit_card").show();
+        $("#add_card").hide();
+        cat_name = $(this).closest("tr").find("td:eq(1)").text();
+        $("#edit_cat_name").val(cat_name)
+        console.log(cat_name);
+    });
+
+    $(document).on('click','#back_cat',function(){
+        console.log("edit");
+        $("#edit_card").hide();
+        $("#add_card").show();
+    });
 });
