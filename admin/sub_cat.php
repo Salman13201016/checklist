@@ -22,11 +22,28 @@
                                     <span id="cat_notification"></span>
                                     <form class="forms-sample">
                                         <div class="form-group">
-                                            <label for="exampleInputUsername1">Category Name</label>
-                                            <input type="text" class="form-control" id="cat_name"
-                                                placeholder="Enter Product Category Name" />
+                                            <label for="exampleInputUsername1">Select Category Name</label>
+                                            <select class="form-control" id="sel_cat_name">
+
+                                                <option>Select Your Cateogry Name</option>
+                                                <?php 
+                                                    include '../db/db_config.php';
+                                                    $sql = "SELECT * FROM categories";
+                                                    $query = mysqli_query($con,$sql);
+                                                    while($result = mysqli_fetch_assoc($query)){
+    
+                                                ?>
+                                                <option value='<?php echo $result['id'];?>'>
+                                                    <?php echo $result['cat_name']; ?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
-                                        <button type="button" class="btn btn-primary me-2" id="sub_cat">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">Sub Category Name</label>
+                                            <input type="text" class="form-control" id="sub_cat_name"
+                                                placeholder="Enter Sub Category Name" />
+                                        </div>
+                                        <button type="button" class="btn btn-primary me-2" id="sub_cat_cat">
                                             Submit
                                         </button>
                                     </form>
@@ -41,6 +58,12 @@
                                     <form class="forms-sample">
                                         <div class="form-group">
                                             <label for="exampleInputUsername1">Category Name</label>
+                                            <input type="text" class="form-control" id="edit_cat_name"
+                                                placeholder="Enter Product Category Name" />
+                                            <input type="hidden" class="form-control" id="edit_cat_id" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">Sub Cateogory</label>
                                             <input type="text" class="form-control" id="edit_cat_name"
                                                 placeholder="Enter Product Category Name" />
                                             <input type="hidden" class="form-control" id="edit_cat_id" />
@@ -73,7 +96,7 @@
                                             </thead>
                                             <tbody id="cat_tbody">
                                                 <?php
-                                                    include '../db/db_config.php';
+                                                    
                                                     $sql = "SELECT * FROM categories";
                                                     $query = mysqli_query($con,$sql);
                                                     $count = 1;

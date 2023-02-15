@@ -32,14 +32,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="cat.php">
-                <i class="mdi mdi-view-headline menu-icon"></i>
-                <span class="menu-title">Task Sub Categories</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="cat.php">
+            <a class="nav-link" href="sub_cat.php">
                 <i class="mdi mdi-view-headline menu-icon"></i>
                 <span class="menu-title">Task Sub Categories</span>
             </a>
