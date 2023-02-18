@@ -38,5 +38,12 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="task_list.php">
+                <i class="mdi mdi-view-headline menu-icon"></i>
+                <span class="menu-title">Task List</span>
+            </a>
+        </li>
+
     </ul>
 </nav>

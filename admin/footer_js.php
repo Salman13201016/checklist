@@ -11,3 +11,4 @@
 <script src="../assets/js/file-upload.js"></script>
 <script src="../assets/js/cat.js"></script>
 <script src="../assets/js/sub_cat.js"></script>
+<script src="../assets/js/task_list.js"></script>
