@@ -91,13 +91,14 @@
                                                     <th>SL</th>
                                                     <th style="display:none;">ID</th>
                                                     <th>Category Name</th>
+                                                    <th>Sub Category Name</th>
                                                     <th>Action </th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="cat_tbody">
+                                            <tbody id="sub_cat_tbody">
                                                 <?php
                                                     
-                                                    $sql = "SELECT * FROM categories";
+                                                    $sql = "SELECT subcats.sub_cat_name, categories.cat_name FROM subcats INNER JOIN categories ON subcats.cat_id = categories.id;";
                                                     $query = mysqli_query($con,$sql);
                                                     $count = 1;
                                                     while($result = mysqli_fetch_assoc($query)){
@@ -109,6 +110,7 @@
                                                     <td><?=$count;?></td>
                                                     <td style="display:none;"><?=$result['id'];?></td>
                                                     <td><?=$result['cat_name'];?></td>
+                                                    <td><?=$result['sub_cat_name'];?></td>
                                                     <td><a href="#" id="edit_btn" class="btn btn-primary action"><i
                                                                 class="far fa-edit"></i></a> <a href="#" id="del_btn"
                                                             class="btn btn-primary action"><i
